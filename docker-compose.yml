@@ -1,0 +1,12 @@
+version: '2.3'
+
+services:
+  nxlog:
+    network_mode: host
+    container_name: nxlog
+    privileged: true
+    restart: unless-stopped
+    image: "nxlog/nxlog-ce"
+    volumes:
+     - /data:/data
+     - ./nxlog.conf:/etc/nxlog.conf
